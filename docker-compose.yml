@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  crypto-screener-bot:
+    image: my-crypto-screener-bot-image:latest
+    container_name: crypto-screener-bot
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - crypto-network
+
+networks:
+  crypto-network:
+    driver: bridge
